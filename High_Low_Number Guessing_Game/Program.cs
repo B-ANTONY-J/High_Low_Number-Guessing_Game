@@ -4,28 +4,41 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This Game Will start by giving the Computer 10 opportunities " +
-                "To Guess the Correct Number. You only Win when you can avoid being Greater " +
-                "than 80(Too High) or Avoid being 25 or below(Too Low)");
+            Console.WriteLine("This Game Will start by giving the User an opportunity " +
+                "To Guess the Correct Number given by the Computer. You will only Win if you guess the correct number " +
+                "that is not Too High or below(Too Low) the computers selection");
+            Console.WriteLine();
+            //int userInput = Convert.ToInt32(Console.ReadLine());
+            //int uaerInputThird = Convert.ToInt32(Console.ReadLine());
 
             Random rnd = new Random();
-            for (int j = 1; j < 10; j++)
+            for (int j = 1; j <= 4; j++)
             {
-                int num = rnd.Next(100);
-                //int num = rnd.Next(1, 100);
-                //Console.WriteLine(rnd.Next(100));
-                Console.WriteLine(num);
-                if (num >= 80)
+                Console.WriteLine();
+                Console.WriteLine("Please Enter a Number Guess.");
+                int userInput = Convert.ToInt32(Console.ReadLine());
+                //int num = rnd.Next(100);
+                int computerGuess = rnd.Next(1, 100);
+                Console.WriteLine();
+                Console.WriteLine("Computer Please Enter a Number Guess.");
+                Console.WriteLine(computerGuess);
+                Console.WriteLine();
+                //Console.WriteLine(userInputSecond);
+                if (userInput > computerGuess)
                 {
-                    Console.WriteLine("Computer You're too High!!  You Lose!");
+                    Console.WriteLine("Player 1 You're Higher than The Computers Guess!!!");
                 }
-                if (num > 26) 
+                else if (userInput < computerGuess)
                 {
-                    Console.WriteLine("Computer you Figured it out! You WIN!!!");
+                    Console.WriteLine("player 1 this time You're Lower than the Computers Guess!!!");
                 }
-                if (num <= 25) 
+                else if (userInput == computerGuess)
                 {
-                    Console.WriteLine("Computer You're too Low! You Lose!!!");
+                    Console.WriteLine("Player 1 you tied but in this game You Win!!!");
+                }
+                else 
+                {
+                    Console.WriteLine("Game Ends after the 4th Time!!!");
                 }
             }
         }
