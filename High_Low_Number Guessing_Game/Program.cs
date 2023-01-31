@@ -12,13 +12,14 @@
             //int uaerInputThird = Convert.ToInt32(Console.ReadLine());
 
             Random rnd = new Random();
-            for (int j = 1; j <= 4; j++)
+            for (int j = 1; j <= 5; j++)
             {
+                Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("Please Enter a Number Guess.");
                 int userInput = Convert.ToInt32(Console.ReadLine());
                 //int num = rnd.Next(100);
-                int computerGuess = rnd.Next(1, 100);
+                int computerGuess = rnd.Next(1, 10);
                 Console.WriteLine();
                 Console.WriteLine("Computer Please Enter a Number Guess.");
                 Console.WriteLine(computerGuess);
