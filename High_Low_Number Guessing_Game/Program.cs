@@ -35,9 +35,10 @@
                 }
                 else if (userInput == computerGuess)
                 {
-                    Console.WriteLine("Player 1 you tied but in this game You Win!!!");
+                    Console.WriteLine("Player 1 you tied with the correct guess of " + userInput + " but in this game Thats how You Win!!!  I hope You enjoyed the Game");
+                    break;
                 }
-                else 
+                else if (userInput != computerGuess);
                 {
                     Console.WriteLine("Game Ends after the 4th Time!!!");
                 }
