@@ -12,37 +12,49 @@
             //int uaerInputThird = Convert.ToInt32(Console.ReadLine());
 
             Random rnd = new Random();
-            for (int j = 1; j <= 5; j++)
+            int computerGuess = rnd.Next(1, 100);
+            Console.WriteLine("Computer please enter a number guess.");
+            Console.WriteLine("(The computers answer will be Displayed Once the User enters the correct guess)");
+            // Console.WriteLine(computerGuess);
+            //int userGuessWinner = user
+            for (int j = 1; j <= 10; j++)
             {
                 Console.WriteLine();
                 Console.WriteLine();
-                Console.WriteLine("Please Enter a Number Guess.");
+                Console.WriteLine("Player 1 please enter a number guess.");
                 int userInput = Convert.ToInt32(Console.ReadLine());
                 //int num = rnd.Next(100);
-                int computerGuess = rnd.Next(1, 10);
                 Console.WriteLine();
-                Console.WriteLine("Computer Please Enter a Number Guess.");
-                Console.WriteLine(computerGuess);
                 Console.WriteLine();
                 //Console.WriteLine(userInputSecond);
                 if (userInput > computerGuess)
                 {
-                    Console.WriteLine("Player 1 You're Higher than The Computers Guess!!!");
+                    Console.WriteLine("Player 1 you're higher than the computers guess!!!");
                 }
                 else if (userInput < computerGuess)
                 {
-                    Console.WriteLine("player 1 this time You're Lower than the Computers Guess!!!");
+                    Console.WriteLine("Player 1 this time you're lower than the computers guess!!!");
                 }
                 else if (userInput == computerGuess)
                 {
-                    Console.WriteLine("Player 1 you tied with the correct guess of " + userInput + " but in this game Thats how You Win!!!  I hope You enjoyed the Game");
+
+                    Console.WriteLine("Player 1 you WIN!!!! You guessed the correct number!!!");
+                    Console.WriteLine();
+                    Console.WriteLine("Player 1 reveal your Number...");
+                    Console.WriteLine(userInput);
+                    Console.WriteLine();
+                    Console.WriteLine("Computer please reveal your number...");
+                    Console.Write(computerGuess);
                     break;
                 }
-                else if (userInput != computerGuess);
+                else if (userInput != computerGuess)
                 {
                     Console.WriteLine("Game Ends after the 4th Time!!!");
                 }
             }
+
+            Console.WriteLine();
+
         }
     }
 }
