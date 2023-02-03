@@ -8,25 +8,20 @@
                 "To Guess the Correct Number given by the Computer. You will only Win if you guess the correct number " +
                 "that is not Too High or below(Too Low) the computers selection");
             Console.WriteLine();
-            //int userInput = Convert.ToInt32(Console.ReadLine());
-            //int uaerInputThird = Convert.ToInt32(Console.ReadLine());
+
 
             Random rnd = new Random();
             int computerGuess = rnd.Next(1, 100);
             Console.WriteLine("Computer please enter a number guess.");
             Console.WriteLine("(The computers answer will be Displayed Once the User enters the correct guess)");
-            // Console.WriteLine(computerGuess);
-            //int userGuessWinner = user
+
             for (int j = 1; j <= 10; j++)
             {
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine("Player 1 please enter a number guess.");
+                Console.WriteLine($"{Environment.NewLine} {Environment.NewLine}Player 1 please enter a number guess.");
                 int userInput = Convert.ToInt32(Console.ReadLine());
-                //int num = rnd.Next(100);
-                Console.WriteLine();
-                Console.WriteLine();
-                //Console.WriteLine(userInputSecond);
+                
+                Console.WriteLine($"{Environment.NewLine}");
+                
                 if (userInput > computerGuess)
                 {
                     Console.WriteLine("Player 1 you're higher than the computers guess!!!");
