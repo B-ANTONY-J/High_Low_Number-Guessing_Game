@@ -2,6 +2,8 @@
 {
     internal class Program
     {
+        const int MAX_GUESSES = 10;
+
         static void Main(string[] args)
         {
             Console.WriteLine("This Game Will start by giving the User an opportunity " +
@@ -11,41 +13,45 @@
 
 
             Random rnd = new Random();
-            int computerGuess = rnd.Next(1, 100);
-            Console.WriteLine("Computer please enter a number guess.");
+            int computerGuess = rnd.Next(1, 101);
+            Console.WriteLine("The Computer will enter a number guess.");
             Console.WriteLine("(The computers answer will be Displayed Once the User enters the correct guess)");
+            Console.WriteLine($"Your have {MAX_GUESSES} attempts to guess the secret number");
 
-            for (int j = 1; j <= 10; j++)
+            for (int j = 1; j <= MAX_GUESSES; ++j)
             {
-                Console.WriteLine($"{Environment.NewLine} {Environment.NewLine}Player 1 please enter a number guess.");
+
+                Console.WriteLine($"{Environment.NewLine} {Environment.NewLine}Please enter a number guess.");
                 int userInput = Convert.ToInt32(Console.ReadLine());
-                
+
                 Console.WriteLine($"{Environment.NewLine}");
-                
+
                 if (userInput > computerGuess)
                 {
-                    Console.WriteLine("Player 1 you're higher than the computers guess!!!");
+                    Console.WriteLine("You're higher than the computers guess!!!");
                 }
                 else if (userInput < computerGuess)
                 {
-                    Console.WriteLine("Player 1 this time you're lower than the computers guess!!!");
+                    Console.WriteLine("You're lower than the computers guess!!!");
                 }
                 else if (userInput == computerGuess)
                 {
 
-                    Console.WriteLine("Player 1 you WIN!!!! You guessed the correct number!!!");
+                    Console.WriteLine("You've WON!!!! You guessed the correct number!!!");
                     Console.WriteLine();
-                    Console.WriteLine("Player 1 reveal your Number...");
+                    Console.WriteLine("Users correct guess revealed below...");
                     Console.WriteLine(userInput);
                     Console.WriteLine();
-                    Console.WriteLine("Computer please reveal your number...");
-                    Console.Write(computerGuess);
                     break;
                 }
-                else if (userInput != computerGuess)
+                if (j == MAX_GUESSES)
                 {
-                    Console.WriteLine("Game Ends after the 4th Time!!!");
+                    Console.WriteLine($"{Environment.NewLine}Computers correct guess revealed below as...");
+                    Console.WriteLine(computerGuess);
+                    Console.WriteLine($"{Environment.NewLine}Your last guess of {userInput} was {computerGuess - userInput} numbers off from the correct guess of {computerGuess}, better luck Next Time!");
+                    break;
                 }
+             
             }
 
             Console.WriteLine();
