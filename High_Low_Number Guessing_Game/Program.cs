@@ -39,21 +39,27 @@
 
                     Console.WriteLine("You've WON!!!! You guessed the correct number!!!");
                     Console.WriteLine();
-                    Console.WriteLine("Users correct guess revealed below...");
-                    Console.WriteLine(userInput);
+                    Console.WriteLine($"Your correct guess of {userInput} WINS the Game!!!");
                     Console.WriteLine();
                     break;
                 }
-                if (j == MAX_GUESSES)
+                if (j == MAX_GUESSES && computerGuess > userInput)
                 {
                     Console.WriteLine($"{Environment.NewLine}Computers correct guess revealed below as...");
                     Console.WriteLine(computerGuess);
                     Console.WriteLine($"{Environment.NewLine}Your last guess of {userInput} was {computerGuess - userInput} numbers off from the correct guess of {computerGuess}, better luck Next Time!");
                     break;
-                }
-             
-            }
 
+                } if (j == MAX_GUESSES && userInput > computerGuess)
+                {
+                    Console.WriteLine($"{Environment.NewLine}Computers correct guess revealed below as...");
+                    Console.WriteLine(computerGuess);
+                    Console.WriteLine($"{Environment.NewLine}This time Your last guess of {userInput} was {userInput - computerGuess} numbers off from the correct guess of {computerGuess}, better luck Next Time!");
+                    break;
+
+                }
+
+            }
             Console.WriteLine();
 
         }
