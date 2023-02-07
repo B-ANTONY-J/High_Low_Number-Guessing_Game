@@ -17,6 +17,7 @@
             Console.WriteLine("The Computer will enter a number guess.");
             Console.WriteLine("(The computers answer will be Displayed Once the User enters the correct guess)");
             Console.WriteLine($"Your have {MAX_GUESSES} attempts to guess the secret number");
+            
 
             for (int j = 1; j <= MAX_GUESSES; ++j)
             {
@@ -38,10 +39,16 @@
                 {
 
                     Console.WriteLine("You've WON!!!! You guessed the correct number!!!");
-                    Console.WriteLine();
-                    Console.WriteLine($"Your correct guess of {userInput} WINS the Game!!!");
-                    Console.WriteLine();
+                    Console.WriteLine($"\nYour correct guess of {userInput} WINS the Game!!!\n");
                     break;
+                }
+                if (j == MAX_GUESSES && userInput == (computerGuess - 5))
+                {
+                    Console.WriteLine($"{Environment.NewLine}Mmm, Mmm, You're close! If the Guess is only 5 off...");
+                    Console.WriteLine(computerGuess);
+                    Console.WriteLine($"{Environment.NewLine}Less than 5 points - you're Almost good at this Game - keep trying!!!");
+                    break;
+
                 }
                 if (j == MAX_GUESSES && computerGuess > userInput)
                 {
@@ -50,17 +57,26 @@
                     Console.WriteLine($"{Environment.NewLine}Your last guess of {userInput} was {computerGuess - userInput} numbers off from the correct guess of {computerGuess}, better luck Next Time!");
                     break;
 
-                } if (j == MAX_GUESSES && userInput > computerGuess)
+                }
+                if (j == MAX_GUESSES && userInput == (computerGuess + 5))
                 {
-                    Console.WriteLine($"{Environment.NewLine}Computers correct guess revealed below as...");
+                    Console.WriteLine($"{Environment.NewLine}Mmm, Mmm, You're close! If the Guess is only 5 off...");
                     Console.WriteLine(computerGuess);
-                    Console.WriteLine($"{Environment.NewLine}This time Your last guess of {userInput} was {userInput - computerGuess} numbers off from the correct guess of {computerGuess}, better luck Next Time!");
+                    Console.WriteLine($"{Environment.NewLine}More than 5 points - You're Almost good at this Game - keep trying!!!");
                     break;
 
                 }
+                if (j == MAX_GUESSES && userInput > computerGuess)
+                {
+                    Console.WriteLine($"{Environment.NewLine}Computers correct guess revealed below as...");
+                    Console.WriteLine(computerGuess);
+                    Console.WriteLine($"{Environment.NewLine}This time Your last guess of {userInput} was {userInput - computerGuess} numbers off from the correct guess of {computerGuess}, better luck Next Time!\n");
+                    break;
 
+                }
             }
-            Console.WriteLine();
+
+
 
         }
     }
