@@ -9,15 +9,13 @@
         {
             Console.WriteLine("This Game Will start by giving the User an opportunity " +
                 "To Guess the Correct Number given by the Computer. You will only Win if you guess the correct number " +
-                "that is not Too High or below(Too Low) the computers selection");
-            Console.WriteLine();
-
+                "that is not Too High(above) or Too Low(below) the computers selection.\n");
 
             Random rnd = new Random();
             int computerGuess = rnd.Next(1, 101);
             Console.WriteLine("The Computer will enter a number guess.");
-            Console.WriteLine("(The computers answer will be Displayed Once the User enters the correct guess)");
-            Console.WriteLine($"Your have {MAX_GUESSES} attempts to guess the secret number");
+            Console.WriteLine("(The computers answer will be Displayed Once the User enters the correct guess.)");
+            Console.WriteLine($"Your have {MAX_GUESSES} attempts to guess the secret number.");
             // test functionality of code guess with 
             //Console.WriteLine(computerGuess);
 
@@ -36,14 +34,9 @@
                     Console.WriteLine($"\nYour correct guess of {userInput} WINS the Game!!!\n");
                     break;
                 }
-                if (j == MAX_GUESSES && userInput > computerGuess)
+                if (j == MAX_GUESSES)
                 {
-                    Console.WriteLine($"\nMmm, Mmm, Better luck Next Game...\nYour guess of {userInput} was {userInput - computerGuess} off from the Computer Guess of {computerGuess}.");
-                    break;
-                }
-                if (j == MAX_GUESSES && userInput < computerGuess)
-                {
-                    Console.WriteLine($"\nMmm, Mmm, Better luck Next Game...\nYour guess of {userInput} was {computerGuess - userInput} off from the Computer Guess of {computerGuess}.");
+                    Console.WriteLine($"\nMmm, Mmm, Better luck Next Game...\nYour guesses were above and below the computer guess of {computerGuess}.");
                     break;
                 }
                 if ((userInput > computerGuess) && (userInput - computerGuess) >= (2 * WITHIN_FIVE))
