@@ -17,7 +17,7 @@
             Console.WriteLine("(The computers answer will be Displayed Once the User enters the correct guess.)");
             Console.WriteLine($"Your have {MAX_GUESSES} attempts to guess the secret number.");
             // test functionality of code guess with 
-            //Console.WriteLine(computerGuess);
+            Console.WriteLine(computerGuess);
 
             for (int j = 1; j <= MAX_GUESSES; ++j)
             {
@@ -41,23 +41,27 @@
                     Console.WriteLine($"\nMmm, Mmm, Better luck Next Game...\nYour guesses were above and below the computer guess of {computerGuess}.");
                     break;
                 }
-                if (userMinusCpuGuess >= equalsTwenty)
+                if (userMinusCpuGuess >= equalsTwenty && userInput > computerGuess)
                 {
-                    Console.WriteLine("You're just tooo far away!!!");
+                    Console.WriteLine("You're not only above the computers guess but you're just sooo far away!!!");
                 }
-                else if (userMinusCpuGuess >= equalsTen)
+                else if (userMinusCpuGuess >= equalsTen && userInput > computerGuess)
                 {
-                    Console.WriteLine($"\nThis is just terrible You're 10 or more numbers away from than the computers guess!!!\nYou can do better than that - Try Again!!!");
+                    Console.WriteLine($"\nThis is just terrible You're still above the computers guess by at least 10 or more numbers!!!\nYou can do better than that - Try Again!!!");
 
                 }
-                else if (userMinusCpuGuess >= WITHIN_FIVE)
+                else if (userMinusCpuGuess >= WITHIN_FIVE && userInput > computerGuess)
                 {
-                    Console.WriteLine($"You're more than {WITHIN_FIVE} numbers away from the CORRECT computer guess!");
+                    Console.WriteLine($"You're getting closer just {WITHIN_FIVE} numbers or more above the CORRECT computer guess!");
                 }
                 else if (userMinusCpuGuess < WITHIN_FIVE)
                 {
-                    Console.WriteLine($"SO CLOSE!!!! You're Less then 4 numbers away(above or below) from the Computers Guess");
+                    Console.WriteLine($"SO CLOSE!!!! You're Less then 4 numbers away but are you above or below the Computers Guess???  Focus if you want to win!");
 
+                } 
+                else
+                {
+                    Console.WriteLine("You're below the computers Guess - Get in the Game and try harder!!!!");
                 }
 
 
