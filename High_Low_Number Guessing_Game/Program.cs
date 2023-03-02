@@ -26,8 +26,6 @@
 
                 Console.WriteLine($"\n\nPlease enter a number guess.");
                 int userInput = Convert.ToInt32(Console.ReadLine());
-                int userMinusCpuGuess = Math.Abs(userInput - computerGuess);
-                bool userGreaterThanCpu = userInput > computerGuess;
                 Console.WriteLine($"\n");
 
 
@@ -42,6 +40,13 @@
                     Console.WriteLine($"\nMmm, Mmm, Better luck Next Game...\nYour guesses were above and below the computer guess of {computerGuess}.");
                     break;
                 }
+
+                //calculates the diff between the User and CPU Guess
+                int userMinusCpuGuess = Math.Abs(userInput - computerGuess);
+
+                //confirms if the User input is Greater than the CPU guess
+                bool userGreaterThanCpu = userInput > computerGuess;
+
                 if (userMinusCpuGuess >= equalsTwenty && userGreaterThanCpu)
                 {
                     Console.WriteLine($"You're not only above the computers guess but you're just sooo far away by {equalsTwenty} or more!!!");
