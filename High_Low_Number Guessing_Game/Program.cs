@@ -19,7 +19,7 @@
             Console.WriteLine("(The computers answer will be Displayed Once the User enters the correct guess.)");
             Console.WriteLine($"Your have {MAX_GUESSES} attempts to guess the secret number.");
             // test functionality of code guess with 
-            Console.WriteLine(computerGuess);
+            //Console.WriteLine(computerGuess);
 
             for (int j = 1; j <= MAX_GUESSES; ++j)
             {
