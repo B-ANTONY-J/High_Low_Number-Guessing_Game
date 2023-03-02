@@ -10,9 +10,9 @@
                 "that is not Too High(above) or Too Low(below) the computers selection.\n");
 
             const int MAX_GUESSES = 10;
-            const int WITHIN_FIVE = 5;
-            int equalsTwenty = Math.Abs(4 * WITHIN_FIVE);
-            int equalsTen = Math.Abs(2 * WITHIN_FIVE);
+            const int MAGIC_NUM = 5;
+            int equalsTwenty = Math.Abs(4 * MAGIC_NUM);
+            int equalsTen = Math.Abs(2 * MAGIC_NUM);
             Random rnd = new Random();
             int computerGuess = rnd.Next(1, 101);
             Console.WriteLine("The Computer will enter a number guess.");
@@ -44,20 +44,20 @@
                 }
                 if (userMinusCpuGuess >= equalsTwenty && userGreaterThanCpu)
                 {
-                    Console.WriteLine("You're not only above the computers guess but you're just sooo far away!!!");
+                    Console.WriteLine($"You're not only above the computers guess but you're just sooo far away by {equalsTwenty} or more!!!");
                 }
                 else if (userMinusCpuGuess >= equalsTen && userGreaterThanCpu)
                 {
-                    Console.WriteLine($"\nThis is just terrible You're still above the computers guess by at least 10 or more numbers!!!\nYou can do better than that - Try Again!!!");
+                    Console.WriteLine($"\nThis is just terrible You're still above the computers guess by at least {equalsTen} or more numbers!!!\nYou can do better than that - Try Again!!!");
 
                 }
-                else if (userMinusCpuGuess >= WITHIN_FIVE && userGreaterThanCpu)
+                else if (userMinusCpuGuess >= MAGIC_NUM && userGreaterThanCpu)
                 {
-                    Console.WriteLine($"You're getting closer just {WITHIN_FIVE} numbers or more above the CORRECT computer guess!");
+                    Console.WriteLine($"You're getting closer just {MAGIC_NUM} numbers or more above the CORRECT computer guess!");
                 }
-                else if (userMinusCpuGuess < WITHIN_FIVE)
+                else if (userMinusCpuGuess < MAGIC_NUM)
                 {
-                    Console.WriteLine($"SO CLOSE!!!! You're Less then 4 numbers away but are you above or below the Computers Guess???  Focus if you want to win!");
+                    Console.WriteLine($"SO CLOSE!!!! You're Less than {MAGIC_NUM} numbers away but are you above or below the Computers Guess???  Focus if you want to win!");
 
                 }
                 else
