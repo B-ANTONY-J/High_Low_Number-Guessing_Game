@@ -23,8 +23,8 @@ namespace High_Low_Number_Guessing_Game
         {
             const int MAX_GUESSES = 10;
             const int MAGIC_NUM = 5;
-            int equalsTwenty = Math.Abs(4 * MAGIC_NUM);
-            int equalsTen = Math.Abs(2 * MAGIC_NUM);
+            int equalsTwenty = 4 * MAGIC_NUM;
+            int equalsTen = 2 * MAGIC_NUM;
             Random rnd = new Random();
             int computerGuess = rnd.Next(1, 101);
             Console.WriteLine($"Your have {MAX_GUESSES} attempts to guess the secret number.");
