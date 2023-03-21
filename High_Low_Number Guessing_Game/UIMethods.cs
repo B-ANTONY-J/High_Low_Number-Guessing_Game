@@ -9,20 +9,20 @@ namespace High_Low_Number_Guessing_Game
 {
     public static class UIMethods
     {
+        const int MAX_GUESSES = 10;
+        const int MAGIC_NUM = 5;
         public static void UserInput()
         {
             Console.WriteLine("This Game Will start by giving the User an opportunity " +
     "To Guess the Correct Number given by the Computer. You will only Win if you guess the correct number " +
     "that is not Too High(above) or Too Low(below) the computers selection.\n");
 
-          
+
             Console.WriteLine("The Computer will enter a number guess.");
             Console.WriteLine("(The computers answer will be Displayed Once the User enters the correct guess.)");
         }
         public static void MaxGuessLoop()
         {
-            const int MAX_GUESSES = 10;
-            const int MAGIC_NUM = 5;
             int equalsTwenty = 4 * MAGIC_NUM;
             int equalsTen = 2 * MAGIC_NUM;
             Random rnd = new Random();
