@@ -31,12 +31,23 @@ namespace High_Low_Number_Guessing_Game
             // test functionality of code guess with 
             //Console.WriteLine(computerGuess);
 
+
+
             for (int j = 1; j <= MAX_GUESSES; ++j)
             {
+
                 Console.WriteLine($"\n\nPlease enter a number guess.");
                 int userInput = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine($"\n");
 
+                //calculates the diff between the User and CPU Guess
+                int userMinusCpuGuess = Math.Abs(userInput - computerGuess);
+
+                //confirms if the User input is Greater than the CPU guess
+                bool userGreaterThanCpu = userInput > computerGuess;
+
+                string hint = "below";
+                if (userGreaterThanCpu) hint = "above";
 
                 if (userInput == computerGuess)
                 {
@@ -50,36 +61,24 @@ namespace High_Low_Number_Guessing_Game
                     break;
                 }
 
-                //calculates the diff between the User and CPU Guess
-                int userMinusCpuGuess = Math.Abs(userInput - computerGuess);
-
-                //confirms if the User input is Greater than the CPU guess
-                bool userGreaterThanCpu = userInput > computerGuess;
-
-                if (userMinusCpuGuess >= equalsTwenty && userGreaterThanCpu)
+                              
+                if (userMinusCpuGuess < MAGIC_NUM)
                 {
-                    Console.WriteLine($"You're not only above the computers guess but you're just sooo far away by {equalsTwenty} or more!!!");
+                    Console.WriteLine($"SO CLOSE!!!! You're less than {MAGIC_NUM} numbers {hint} the Computers Guess! Focus if you want to win!");
                 }
-                else if (userMinusCpuGuess >= equalsTen && userGreaterThanCpu)
+                else if (userMinusCpuGuess <= equalsTen)
                 {
-                    Console.WriteLine($"\nThis is just terrible You're still above the computers guess by at least {equalsTen} or more numbers!!!\nYou can do better than that - Try Again!!!");
-
+                    Console.WriteLine($"\nThis is just terrible! You're still {hint} the computers guess by {equalsTen} or less numbers!!!\nYou can do better than that - Try Again!!!");
                 }
-                else if (userMinusCpuGuess >= MAGIC_NUM && userGreaterThanCpu)
+                else if (userMinusCpuGuess <= equalsTwenty)
                 {
-                    Console.WriteLine($"You're getting closer just {MAGIC_NUM} numbers or more above the CORRECT computer guess!");
+                    Console.WriteLine($"You're {hint} the computers Guess - Get in the Game and try harder!!!!");
                 }
-                else if (userMinusCpuGuess < MAGIC_NUM)
-                {
-                    Console.WriteLine($"SO CLOSE!!!! You're Less than {MAGIC_NUM} numbers away but are you above or below the Computers Guess???  Focus if you want to win!");
-
-                }
+                // this is now the remaining case where the user is more off than 20 numbers
                 else
                 {
-                    Console.WriteLine("You're below the computers Guess - Get in the Game and try harder!!!!");
+                    Console.WriteLine($"You're not only {hint} the computers guess but you're just sooo far away by more than {equalsTwenty}!!!");
                 }
-
-
             }
         }
     }
