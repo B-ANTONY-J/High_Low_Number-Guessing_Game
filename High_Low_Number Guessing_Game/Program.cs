@@ -24,9 +24,7 @@
             Random rnd = new Random();
             int computerGuess = rnd.Next(1, 101);
             Console.WriteLine($"Your have {MAX_GUESSES} attempts to guess the secret number.");
-            // test functionality of code guess with 
-            //Console.WriteLine(computerGuess);
-
+            
 
 
             for (int j = 1; j <= MAX_GUESSES; ++j)
