@@ -71,7 +71,7 @@
                 {
                     Console.WriteLine($"You're {hint} the computers Guess - Get in the Game and try harder!!!!");
                 }
-                // this is now the remaining case where the user is more off than 20 numbers
+                // The remaining case will now show where the user is off by more than 20 numbers
                 else
                 {
                     Console.WriteLine($"You're not only {hint} the computers guess but you're just sooo far away by more than {guessMarginByTwenty}!!!");
